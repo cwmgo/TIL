@@ -1,0 +1,23 @@
+h1 {
+    color: blue;
+    font-size: 50%;
+}
+
+div {
+    color: red;
+    font-size: 50%
+}
+
+ul {
+    color: rgb(48, 199, 66);
+    font-size: 2rem
+}
+/* rem은 기본 폰트사이즈 */
+
+div > h2 {
+    color: skyblue;
+    font-size: 5em;
+}
+/* em은 부모에게 상속받은 크기를 100%로하고 몇배하는것
+ 여기선 div의 font-size가 50%이기에 50% * 5 250%만큼 커진다는것. 
+ 16*2.5 = 40. 그래서 40point.*/

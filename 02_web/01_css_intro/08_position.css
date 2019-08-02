@@ -1,0 +1,30 @@
+div {
+    height: 100px;
+    width: 100px;
+    background-color: purple;
+    line-height: 100px;
+    text-align: center;
+}
+
+.relative {                 /* static을 기준으로 움직이는것. */
+    position: relative;
+    top: 100px;
+    left: 100px;
+
+}
+
+.parent {
+    position: relative;
+}
+
+.absolute-child {
+    position: absolute; /* 가장 가까운 놈으로 부터 움직이는것, */
+    top : 50px;
+    left: 50px;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}

@@ -1,0 +1,47 @@
+<!-- flex는 간편하게 요소들을 원하는 위치에 위치시킬 수 있다. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 800px;
+            padding: 16px;
+            border: 2px solid red;
+            display: flex;
+            /* flex-direction: column: 위로쌓임. column-reverse: 아래부터쌓임. 기본값: 옆으로쌓임. row-reverse: 오른쪽부터쌓임. */
+            flex-wrap: wrap; /* 화면크기에 따라 자동으로 배치해줌. -reverse 먹힌다. */
+            /* justify-content: flex-end; center: 중앙정렬, space-between: 간격이 일정해짐, space-around: 여백간격동일  */
+            align-items: center; /* center: 열로 중앙. 완전중앙으로 오게하려면? justify-content: center와 함께 쓰면된다. 중앙정렬이 아주쉽다! */
+        }
+
+        .item {
+            padding: 16px;
+            border: 2px solid blue;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item" style="align-self:flex-end">001</div> <!-- 1번이 아래로 내려가게 된다.-->
+        <div class="item" style="align-self:flex-start">002</div> <!-- 2번이 위로 간다.-->
+        <div class="item">003</div>
+        <div class="item">004</div>
+        <div class="item">005</div>
+        <div class="item">006</div>
+        <div class="item">007</div>
+        <div class="item">008</div>
+        <div class="item">009</div>
+        <div class="item">010</div>
+        <div class="item">011</div>
+        <div class="item">012</div>
+    </div>
+</body>
+</html>
+
+<!-- 네이버에서 flexbox로 만들 수 있는 10가지 레이아웃. 이것을 참고하면 좋다. -->

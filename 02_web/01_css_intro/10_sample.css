@@ -1,0 +1,10 @@
+ol > li:nth-child(4) {
+    background: blueviolet;
+}
+/* ol의 4번째태그가 li일때 백그라운드를 이렇게 바꾼다. */
+
+ol > li:nth-of-type(4){
+    background: blue
+}
+
+/* ol의 li애들중에 4번째를 바꾼다는것. */
