@@ -1,0 +1,6 @@
+<form action="/user_create/" method="POST"> <!-- 데이터를 조작하는것이 POST. GET과는 완전히다름.-->
+    {% csrf_token %} <!--반드시post요청을 할땐 써줘야한다. 그 요청이 내가보낸 요청인지 최소한의 신원확인을 위한 토큰-->
+    이름: <input type="text" name="name">
+    비밀번호: <input type="password" name="pwd">
+    <input type="submit">
+</form>

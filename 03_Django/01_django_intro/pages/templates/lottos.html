@@ -1,0 +1,14 @@
+{% for i in lottos %}
+    <p>{{i}}</p>
+{% endfor %}
+
+{% if real_lottos == lottos %}
+    <p>당첨입니다~!</p>
+{% else %}
+    <p>꽝입니다~!</p>
+{% endif %}
+
+<!-- <form action="/isbirth"> 여기 url로 보내는것.
+    <input type="text" name="char"> 입력한 데이터를 name이라는 박스안에 담아서 보내.
+    <input type="submit">
+</form> -->
