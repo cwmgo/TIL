@@ -11,22 +11,22 @@ import requests
 
 #1. 기본 로직
 def index(request):
-    return render(request, 'index.html') 
+    return render(request, 'pages/index.html') 
     #return 에는 render! 이게 가장 기본 골격이다.
     #요청이오면 index.html을 앱아래에서 templates폴더안에서 찾는다.
 
 def introduce(request):
-    return render(request, 'introduce.html')
+    return render(request, 'pages/introduce.html')
 
 def image(request):
-    return render(request, 'image.html')
+    return render(request, 'pages/image.html')
 
 #2. Template Variable(템플릿 변수)
 def dinner(request):
     menu = ['족발', '햄버거', '치킨', '초밥']
     pick = random.choice(menu)
     context = {'pick': pick}
-    return render(request, 'dinner.html', context) #render의 3번째 인자는 반드시 딕셔너리여야한다.
+    return render(request, 'pages/dinner.html', context) #render의 3번째 인자는 반드시 딕셔너리여야한다.
 
 #3. Variable Routing(동적 라우팅)
 def hello(request, name, age):
@@ -39,7 +39,7 @@ def hello(request, name, age):
         'age': age,
         'pick': pick,
     }
-    return render(request, 'hello.html', context)
+    return render(request, 'pages/hello.html', context)
 
 #4. 실습
 #4-1. 동적 라우팅을 활용해서(name과 age를 인자로 받아) 자기소개 페이지
@@ -48,7 +48,7 @@ def intro(request, name, age):
         'name': name,
         'age': age,
     }
-    return render(request, 'intro.html', context)
+    return render(request, 'pages/intro.html', context)
 
 #4-2. 두개의 숫자를 인자로 받아(num1, num2) 곱셈 결과를 출력.
 def mux(request, num1, num2):
@@ -58,7 +58,7 @@ def mux(request, num1, num2):
         'num2': num2,
         'result' : result,
     }
-    return render(request, 'mux.html', context)
+    return render(request, 'pages/mux.html', context)
 
 #4-3. 반지름을 인자로 받아 원의 넓이를 구하시오.
 def area(request, r):
@@ -67,7 +67,7 @@ def area(request, r):
         'r' : r,
         'result': result,
     }
-    return render(request, 'area.html', context)
+    return render(request, 'pages/area.html', context)
 
 #5. DTL(Django Template)
 def template_language(request):
@@ -84,10 +84,10 @@ def template_language(request):
         'empty_list': empty_list,
         'datetimenow': datetimenow,
     }
-    return render(request, 'template_language.html', context)
+    return render(request, 'pages/template_language.html', context)
 
 def info(request):
-    return render(request, 'info.html')
+    return render(request, 'pages/info.html')
 
 #6. 실습
 #6-1. isbirth
@@ -102,7 +102,7 @@ def isbirth(request):
         'result': result,
     }
     
-    return render(request, 'isbirth.html', context )
+    return render(request, 'pages/isbirth.html', context )
 
 def ispal(request, character):
     inp = list(character)
@@ -115,7 +115,7 @@ def ispal(request, character):
         'result': result,
     }
 
-    return render(request, 'ispal.html', context )
+    return render(request, 'pages/ispal.html', context )
 
 
 def lottos(request):
@@ -126,7 +126,7 @@ def lottos(request):
         'real_lottos': real_lottos,
     }
 
-    return render(request, 'lottos.html', context)
+    return render(request, 'pages/lottos.html', context)
 
 #7. Form - GET
 #GET은 데이터에 대한 조회를 요청하는것.
@@ -134,7 +134,7 @@ def lottos(request):
 #데이터에대한 조작을 하는게 아니라 server에 있는 data를 달라는 요청이 GET이다.
 
 def throw(request):
-    return render(request, 'throw.html')
+    return render(request, 'pages/throw.html')
 
 def catch(request):
     message = request.GET.get('message') # 이요청이 GET요청이고 데이터는 query dict형식으로 들어온다.
@@ -143,21 +143,21 @@ def catch(request):
         'message': message,
         'message2': message2,
     }
-    return render(request, 'catch.html', context)
+    return render(request, 'pages/catch.html', context)
 
 def ping(request):
-    return render(request, 'ping.html')
+    return render(request, 'pages/ping.html')
 
 def pong(request):
     message = request.GET.get('message')
     context = {
         'message': message,
     }
-    return render(request, 'pong.html', context)
+    return render(request, 'pages/pong.html', context)
 
 #8. Form - GET(실습)(아스키 아티)
 def art(request):
-    return render(request, 'art.html')
+    return render(request, 'pages/art.html')
 
 def result(request):
     #1. form으로 날린 데이터를 받는다.(GET)
@@ -179,11 +179,11 @@ def result(request):
     context = {
         'result': result
     }
-    return render(request, 'result.html', context)
+    return render(request, 'pages/result.html', context)
 
 #9. Form - POST
 def user_new(request):
-    return render(request, 'user_new.html')
+    return render(request, 'pages/user_new.html')
 
 def user_create(request):
     name = request.POST.get('name')
@@ -192,14 +192,23 @@ def user_create(request):
         'name': name,
         'password': pwd,
     }
-    return render(request, 'user_create.html', context)
+    return render(request, 'pages/user_create.html', context)
 
+# 14_workshop    
 def push(request):
-    return render(request,'push.html')
+    return render(request,'pages/push.html')
 
 def pull(request):
     num = request.GET.get('num')
     context = {
         'num': num
     }
-    return render(request, 'pull.html', context)
+    return render(request, 'pages/pull.html', context)
+
+#10. 정적 파일
+def static_example(request):
+    return render(request, 'pages/static_example.html')
+
+def one(request):
+    return render(request, 'pages/one.html')
+        

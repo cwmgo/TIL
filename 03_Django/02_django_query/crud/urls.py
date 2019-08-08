@@ -1,4 +1,4 @@
-"""django_intro URL Configuration
+"""crud URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -13,15 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-"""
-url 은 집배원과 같은 역할. 주소가 왔네? 어디로 보내야지? view로 가네? 보내줘야지
-주소창으로 요청이 들어오면 그에맞는 view로 보내주는 역할.
-"""
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
 urlpatterns = [
-    path('utilities/', include('utilities.urls')),
-    path('pages/', include('pages.urls')),
     path('admin/', admin.site.urls),
 ]
